@@ -15,29 +15,16 @@ class sms:
         # Set default current credit
         self.current_credit = 0
         self.url = False
-        if (self.sms_vendor == 'ROBI'):
-            # Define Robi Base URL for communication
-            end_point = 'https://bmpws.robi.com.bd/ApacheGearWS/'
-            # Rabi Credential
-            self.username = 'yourname'
-            self.password = 'yourPassword'
-            self.telcom_from = 'yourTelecomeNumber'
-            # Robi end points
-            self.single_end_point = end_point + 'SendTextMessage'
-            self.multi_end_point = end_point + 'SendTextMultiMessage'
-            self.status_end_point = end_point + 'GetMessageStatus'
-        elif (self.sms_vendor == 'GP'):
-            # Define GP Base URL for communication
-            end_point = 'https://cmp.grameenphone.com/gpcmpapi/messageplatform/controller.home'
-
-            # GP Credential
-            self.username = 'YourName'
-            self.password = ''
-            self.telcom_from = ''
-            # GP end point
-            self.single_end_point = ''
-            self.multi_end_point = ''
-            self.status_end_point = ''
+        # Define Robi Base URL for communication
+        end_point = 'https://bmpws.robi.com.bd/ApacheGearWS/'
+        # Rabi Credential
+        self.username = 'yourname'
+        self.password = 'yourPassword'
+        self.telcom_from = 'yourTelecomeNumber'
+        # Robi end points
+        self.single_end_point = end_point + 'SendTextMessage'
+        self.multi_end_point = end_point + 'SendTextMultiMessage'
+        self.status_end_point = end_point + 'GetMessageStatus'
 
     # sms send function, this is mother function for send sms and get status
     def send(self):
@@ -88,6 +75,7 @@ class sms:
 
 
 
-
+#object create
 myobj = sms()
+#send function call
 print(myobj.send())
